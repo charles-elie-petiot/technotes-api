@@ -6,7 +6,6 @@ const { logger, logEvents } = require('./middleware/logger')
 const errorHandler = require('./middleware/errorHandler')
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
-const corsOptions = require ('./config/corsOptions')
 const connectDB = require('./config/dbConn')
 const mongoose = require('mongoose')
 const PORT = process.env.PORT || 3500
@@ -18,7 +17,12 @@ connectDB()
 app.use(logger)
 //logs every log tries
 
-app.use(cors())
+var corsOptions = {
+  origin: 'https://technotes-4ljv.onrender.com',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
+app.use(cors(corsOptions))
 //allow public access with our options
 
 app.use(express.json())
