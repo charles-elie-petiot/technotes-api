@@ -19,6 +19,7 @@ app.use(logger)
 
 var corsOptions = {
   origin: 'https://technotes-4ljv.onrender.com',
+  credentials: true,
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
