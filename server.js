@@ -15,6 +15,8 @@ console.log(process.env.NODE_ENV)
 
 connectDB()
 
+app.options('*',cors())
+
 app.use(logger)
 //logs every log tries
 
