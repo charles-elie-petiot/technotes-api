@@ -18,7 +18,7 @@ connectDB()
 app.use(logger)
 //logs every log tries
 
-app.use(cors())
+app.use(cors(corsOptions))
 //allow public access with our options
 
 app.use(express.json())
